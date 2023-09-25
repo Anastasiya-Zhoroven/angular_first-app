@@ -6,11 +6,12 @@ import { HousingLocation } from './housinglocation';
 })
 export class HousingService {
 
-  url = '/locations';
+  url = '/assets/db.json';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
-    const data = await fetch(this.url);
-    return await data.json() ?? [];
+    const response = await fetch(this.url);
+    const data = await response.json();
+    return data?.locations ?? [];
   }
 
   async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
