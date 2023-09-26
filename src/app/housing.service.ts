@@ -6,7 +6,7 @@ import { HousingLocation } from './housinglocation';
 })
 export class HousingService {
 
-  url = '/assets/db.json';
+  url = 'assets/db.json';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const response = await fetch(this.url);
